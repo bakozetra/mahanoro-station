@@ -38428,106 +38428,316 @@ exports.ServerStyleSheet = Ue;
 "production" !== "development" && "undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native"), "production" !== "development" && "test" !== "development" && (window["__styled-components-init__"] = window["__styled-components-init__"] || 0, 1 === window["__styled-components-init__"] && console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."), window["__styled-components-init__"] += 1);
 var _default = qe;
 exports.default = _default;
-},{"react-is":"node_modules/react-is/index.js","react":"node_modules/react/index.js","shallowequal":"node_modules/shallowequal/index.js","@emotion/stylis":"node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js"}],"src/styles/style/cityDestination.js":[function(require,module,exports) {
+},{"react-is":"node_modules/react-is/index.js","react":"node_modules/react/index.js","shallowequal":"node_modules/shallowequal/index.js","@emotion/stylis":"node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js"}],"src/styles/destination/style/destinations.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Button = exports.Title = exports.Container = void 0;
+exports.Button = exports.Container = exports.Title = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+const Title = _styledComponents.default.h2``;
+exports.Title = Title;
 const Container = _styledComponents.default.div`
-  display : grid ;
-  grid-template-areas : "tana  toama"
-                        "vato mora";
-  &:nth-child(1) {
-    grid-area : tana;
-  }
-  &:nth-of-type(2) {
-    grid-area : toama
-  }
+display : grid;
+grid-template-areas : "tana toama"
+                      "vato mora";
 
+&:nth-child(1) {
+  grid-area : tana;
+}
 `;
 exports.Container = Container;
-const Title = _styledComponents.default.h2`
-
-
-`;
-exports.Title = Title;
 const Button = _styledComponents.default.button`
 width: 413px;
 height: 100px;
-left: 266px;
-top: 512px;
 background: #0F0E17;
-font-family: Rubik;
-font-style: normal;
-font-weight: normal;
+color: #FFFFFF;
 font-size: 36px;
 line-height: 43px;
 text-align: center;
 text-transform: uppercase;
-color: #FFFFFF;
-max-width: 100%;
-margin-bottom : 2rem;
-
 `;
 exports.Button = Button;
-},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/styles/style/index.js":[function(require,module,exports) {
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/styles/destination/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = DesinationCity;
+exports.default = Destiantions;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _cityDestination = require("./cityDestination");
+var _destinations = require("./style/destinations");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function DesinationCity({
+function Destiantions({
   children,
   ...restProps
 }) {
-  return /*#__PURE__*/_react.default.createElement(_cityDestination.Container, restProps, children);
+  return /*#__PURE__*/_react.default.createElement(_destinations.Container, restProps, children);
 }
 
-DesinationCity.Button = function DesinationCityButton({
+Destiantions.Title = function DestiantionsTitle({
   children,
   ...restProps
 }) {
-  return /*#__PURE__*/_react.default.createElement(_cityDestination.Button, restProps, children);
+  return /*#__PURE__*/_react.default.createElement(_destinations.Title, restProps, children);
 };
 
-DesinationCity.Title = function DesinationCityTitle({
+Destiantions.Button = function DestiantionsButton({
   children,
   ...restProps
 }) {
-  return /*#__PURE__*/_react.default.createElement(_cityDestination.Title, restProps, children);
+  return /*#__PURE__*/_react.default.createElement(_destinations.Button, restProps, children);
 };
-},{"react":"node_modules/react/index.js","./cityDestination":"src/styles/style/cityDestination.js"}],"src/styles/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./style/destinations":"src/styles/destination/style/destinations.js"}],"src/styles/Seats/style/Seats.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "DesinationCity", {
+exports.Image = exports.Paragraph = exports.Button = exports.Container = exports.Title = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const Title = _styledComponents.default.h2``;
+exports.Title = Title;
+const Container = _styledComponents.default.div`
+ display : flex;
+`;
+exports.Container = Container;
+const Button = _styledComponents.default.button`
+width: 306px;
+height: 93px;
+background: #E53170;
+font-size: 36px;
+line-height: 43px;
+color: #FFFFFF;
+
+`;
+exports.Button = Button;
+const Paragraph = _styledComponents.default.p``;
+exports.Paragraph = Paragraph;
+const Image = _styledComponents.default.img``;
+exports.Image = Image;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/styles/Seats/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Seats;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Seats = require("./style/Seats");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Seats({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_Seats.Container, restProps, children);
+}
+
+Seats.Title = function SeatsTitle({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_Seats.Title, restProps, children);
+};
+
+Seats.Button = function SeatsButton({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_Seats.Button, restProps, children);
+};
+
+Seats.Paragraph = function SeatsParagraph({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_Seats.Paragraph, restProps, children);
+};
+
+Seats.Image = function SeatsImage({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_Seats.Image, restProps, children);
+};
+},{"react":"node_modules/react/index.js","./style/Seats":"src/styles/Seats/style/Seats.js"}],"src/styles/SeatsBook/style/SeatsBook.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Button = exports.SelectButtonSeat = exports.Section = exports.Paragraph = exports.List = exports.Container = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const Container = _styledComponents.default.ul``;
+exports.Container = Container;
+const List = _styledComponents.default.li`
+list-style: none;
+display : flex;
+justify-content: space-between;`;
+exports.List = List;
+const Paragraph = _styledComponents.default.p``;
+exports.Paragraph = Paragraph;
+const Section = _styledComponents.default.section`
+ display : flex;
+ flex-direction : row-reverse;
+`;
+exports.Section = Section;
+const SelectButtonSeat = _styledComponents.default.div``;
+exports.SelectButtonSeat = SelectButtonSeat;
+const Button = _styledComponents.default.button``;
+exports.Button = Button;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/styles/SeatsBook/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = SeatsBook;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _SeatsBook = require("./style/SeatsBook");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function SeatsBook({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_SeatsBook.Section, restProps, children);
+}
+
+SeatsBook.List = function SeatsBookList({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_SeatsBook.List, restProps, children);
+};
+
+SeatsBook.Paragraph = function SeatsBookParagraph({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_SeatsBook.Paragraph, restProps, children);
+};
+
+SeatsBook.SelectButtonSeat = function SeatsBookSelectButtonSeat({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_SeatsBook.SelectButtonSeat, restProps, children);
+};
+
+SeatsBook.Container = function SeatsBookContainer({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_SeatsBook.Container, restProps, children);
+};
+
+SeatsBook.Button = function SeatsBookButton({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_SeatsBook.Button, restProps, children);
+};
+},{"react":"node_modules/react/index.js","./style/SeatsBook":"src/styles/SeatsBook/style/SeatsBook.js"}],"src/styles/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "Destiantions", {
   enumerable: true,
   get: function () {
-    return _style.default;
+    return _destination.default;
+  }
+});
+Object.defineProperty(exports, "Seats", {
+  enumerable: true,
+  get: function () {
+    return _Seats.default;
+  }
+});
+Object.defineProperty(exports, "SeatsBook", {
+  enumerable: true,
+  get: function () {
+    return _SeatsBook.default;
   }
 });
 
-var _style = _interopRequireDefault(require("./style"));
+var _destination = _interopRequireDefault(require("./destination"));
+
+var _Seats = _interopRequireDefault(require("./Seats"));
+
+var _SeatsBook = _interopRequireDefault(require("./SeatsBook"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./style":"src/styles/style/index.js"}],"src/component/cityStation.js":[function(require,module,exports) {
+},{"./destination":"src/styles/destination/index.js","./Seats":"src/styles/Seats/index.js","./SeatsBook":"src/styles/SeatsBook/index.js"}],"src/component/cityStation.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactRedux = require("react-redux");
+
+var _index = require("../actions/index");
+
+var _styles = require("../styles");
+
+var _reactRouterDom = require("react-router-dom");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function CityStation({
+  direction
+}) {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_styles.Destiantions.Title, null, "Where are you going?"), /*#__PURE__*/_react.default.createElement(_styles.Destiantions, null, direction.map(cit => {
+    return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: `/${cit.name}`
+    }, /*#__PURE__*/_react.default.createElement(_styles.Destiantions.Button, null, cit.name));
+  })));
+}
+
+function mapStateToProps(globalState) {
+  return {
+    direction: globalState.destinationCity
+  };
+}
+
+const mapDispatchToProps = {
+  getDestiantion: _index.getDestiantion
+};
+
+var _default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(CityStation);
+
+exports.default = _default;
+},{"react":"node_modules/react/index.js","react-redux":"node_modules/react-redux/es/index.js","../actions/index":"src/actions/index.js","../styles":"src/styles/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/component/bookSeat.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38539,48 +38749,132 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactRedux = require("react-redux");
 
+var _reactRouterDom = require("react-router-dom");
+
 var _index = require("../actions/index");
 
 var _styles = require("../styles");
-
-var _reactRouterDom = require("react-router-dom");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function CityStation({
-  city,
+function BookSeats({
   getCity,
-  direction
+  city
 }) {
+  const [isAvailable, setIseAvaible] = (0, _react.useState)(false);
+  const [count, SetCount] = (0, _react.useState)(0);
+  const mee = (0, _react.useRef)(null);
+  console.log(isAvailable);
+  let {
+    booking
+  } = (0, _reactRouterDom.useParams)();
+  let cityFilter = city?.filter(seat => seat.id == booking);
+  console.log(cityFilter);
   (0, _react.useEffect)(() => {
     getCity();
   }, []);
   console.log(city);
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_styles.DesinationCity.Title, null, "Where are you going?"), /*#__PURE__*/_react.default.createElement(_styles.DesinationCity, null, direction.map(cit => {
-    return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-      to: ""
-    }, /*#__PURE__*/_react.default.createElement(_styles.DesinationCity.Button, null, cit.name));
-  })));
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, cityFilter?.map(seat => {
+    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "Book a seat to : ", seat.destination, " "), /*#__PURE__*/_react.default.createElement(_styles.SeatsBook, null, /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.Container, null, /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.List, null, /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.Paragraph, null, "DepartureTime :"), /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.Paragraph, null, seat.departureTime)), /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.List, null, /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.Paragraph, null, "Driver :"), /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.Paragraph, null, seat.driverName)), /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.List, null, /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.Paragraph, null, "Driver's contact"), /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.Paragraph, null, " ", seat.driverContact)), /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.List, null, /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.Paragraph, null, "Estimate duration :"), /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.Paragraph, null, seat.estimatedDuration)), /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.List, null, /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.Paragraph, null, "Breaks :"), /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.Paragraph, null, seat.breaks)), /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.List, null, /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.Paragraph, null, "Price : ", seat.price, " Ar")), /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.Button, null, "Book ", count, " seats")), /*#__PURE__*/_react.default.createElement(_styles.SeatsBook.SelectButtonSeat, null, seat.seats.map(place => {
+      console.log(place);
+      console.log(place.isAvailable);
+
+      function CheckPlace(e) {
+        if (place.isAvailable == !isAvailable) {
+          setIseAvaible(true);
+          e.target.style.backgroundColor = "rgba(234, 130, 130, 1)";
+        } else {
+          setIseAvaible(false);
+          SetCount(count + 1);
+        }
+      }
+
+      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("button", {
+        ref: mee,
+        disabled: isAvailable,
+        onClick: e => CheckPlace(e)
+      }, place.isAvailable == !isAvailable ? /*#__PURE__*/_react.default.createElement("button", {
+        style: {
+          backgroundColor: "#44014C"
+        }
+      }, "\uD83D\uDCBA") : /*#__PURE__*/_react.default.createElement("button", null, "\uD83D\uDCBA")));
+    }))));
+  }));
 }
 
 function mapStateToProps(globalState) {
   return {
-    city: globalState.city,
-    direction: globalState.destinationCity
+    city: globalState.city
   };
 }
 
 const mapDispatchToProps = {
-  getCity: _index.getCity,
-  getDestiantion: _index.getDestiantion
+  getCity: _index.getCity
 };
 
-var _default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(CityStation);
+var _default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(BookSeats);
 
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-redux":"node_modules/react-redux/es/index.js","../actions/index":"src/actions/index.js","../styles":"src/styles/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/app.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-redux":"node_modules/react-redux/es/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../actions/index":"src/actions/index.js","../styles":"src/styles/index.js"}],"src/component/tripBokking.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactRedux = require("react-redux");
+
+var _reactRouterDom = require("react-router-dom");
+
+var _index = require("../actions/index");
+
+var _styles = require("../styles");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function TripBooking({
+  getCity,
+  city
+}) {
+  let {
+    seats
+  } = (0, _reactRouterDom.useParams)();
+  console.log(seats);
+  let cityFilter = city?.filter(seat => seat.destination == seats);
+  console.log(cityFilter);
+  (0, _react.useEffect)(() => {
+    getCity();
+  }, []);
+  console.log(city);
+  return /*#__PURE__*/_react.default.createElement("div", null, cityFilter?.map(seat => {
+    console.log(seat.seats.length);
+    return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, seat.destination), /*#__PURE__*/_react.default.createElement(_styles.Seats, null, /*#__PURE__*/_react.default.createElement(_styles.Seats.Image, null), /*#__PURE__*/_react.default.createElement("p", null, seat.seats.length), /*#__PURE__*/_react.default.createElement(_styles.Seats.Paragraph, null, seat.departureTime), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: `/${seat.destination}/${seat.id}`
+    }, /*#__PURE__*/_react.default.createElement(_styles.Seats.Button, null, "Book a seat"))));
+  }));
+}
+
+function mapStateToProps(globalState) {
+  return {
+    city: globalState.city
+  };
+}
+
+const mapDispatchToProps = {
+  getCity: _index.getCity
+};
+
+var _default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(TripBooking);
+
+exports.default = _default;
+},{"react":"node_modules/react/index.js","react-redux":"node_modules/react-redux/es/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../actions/index":"src/actions/index.js","../styles":"src/styles/index.js"}],"src/app.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38594,14 +38888,24 @@ var _cityStation = _interopRequireDefault(require("./component/cityStation"));
 
 var _reactRouterDom = require("react-router-dom");
 
+var _bookSeat = _interopRequireDefault(require("./component/bookSeat"));
+
+var _tripBokking = _interopRequireDefault(require("./component/tripBokking"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    exact: true,
     path: "/"
-  }, /*#__PURE__*/_react.default.createElement(_cityStation.default, null))));
+  }, /*#__PURE__*/_react.default.createElement(_cityStation.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    exact: true,
+    path: "/:seats"
+  }, /*#__PURE__*/_react.default.createElement(_tripBokking.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/:seats/:booking"
+  }, /*#__PURE__*/_react.default.createElement(_bookSeat.default, null))));
 }
-},{"react":"node_modules/react/index.js","./component/cityStation":"src/component/cityStation.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"node_modules/redux-thunk/es/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./component/cityStation":"src/component/cityStation.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./component/bookSeat":"src/component/bookSeat.js","./component/tripBokking":"src/component/tripBokking.js"}],"node_modules/redux-thunk/es/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38781,7 +39085,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64623" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56505" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

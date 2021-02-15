@@ -1,39 +1,31 @@
-import React , {useEffect} from "react"
+import React  from "react"
 import { connect } from "react-redux";
-import {getCity , getDestiantion} from "../actions/index"
-import { DesinationCity } from "../styles";
+import {getDestiantion} from "../actions/index"
+import { Destiantions } from "../styles";
 import {Link} from "react-router-dom"
 
-function CityStation({city , getCity , direction}) {
-  useEffect(() => {
-    getCity();
-  } , [])
- 
-  console.log(city);
+function CityStation({direction}) {
   return (
   <>
-    <DesinationCity.Title>Where are you going?</DesinationCity.Title>
-    <DesinationCity>
+    <Destiantions.Title>Where are you going?</Destiantions.Title>
+    <Destiantions>
       {
       direction.map(cit => {
-        return <Link to="">
-        <DesinationCity.Button>{cit.name}</DesinationCity.Button>
+        return <Link to={`/${cit.name}`}>
+        <Destiantions.Button>{cit.name}</Destiantions.Button>
         </Link>
       })}
-    </DesinationCity>
+    </Destiantions>
     </>
   )
-  
 }
 
 function mapStateToProps(globalState) {
   return {
-    city: globalState.city ,
     direction : globalState.destinationCity
   }
 }
 const mapDispatchToProps = {
-	getCity ,
   getDestiantion
 };
 
