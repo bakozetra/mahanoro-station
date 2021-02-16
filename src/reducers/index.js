@@ -1,4 +1,3 @@
-import { func } from "prop-types";
 import { combineReducers } from "redux"
 
 export function city(state = [] , action ) {
@@ -11,9 +10,23 @@ export function city(state = [] , action ) {
    }
 }
 
-export function count (state =[]) {
+export function count(state =[] , action) {
   console.log(state);
-   return state
+   switch(action.type) {
+     case 'SHOW_ACCOUNT': 
+     return [...state, action.value]
+     default : 
+     return state
+   }
+}
+export function confirmPlace(state =[] , action) {
+  console.log(state);
+   switch(action.type) {
+     case 'CONFIRM_PLACE': 
+     return [...state, action.value]
+     default : 
+     return state
+   }
 }
 
 export function  destinationCity(state=[] , action) {
@@ -30,5 +43,7 @@ export function  destinationCity(state=[] , action) {
 export default combineReducers({
   city ,
   count ,
-  destinationCity
+  destinationCity,
+  confirmPlace
+
 })

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Container , Title , Button  , Paragraph , Image} from "./style/Seats"
+import {Container , Title , Button  , Paragraph , Image , Date} from "./style/Seats"
 
 export default function Seats({children , ...restProps}) {
   return <Container {...restProps} >{children}</Container>
@@ -17,4 +17,7 @@ Seats.Paragraph = function SeatsParagraph ({children , ...restProps}) {
 }
 Seats.Image = function SeatsImage ({children , ...restProps}) {
    return <Image {...restProps}>{children}</Image>
+}
+Seats.Date = function SeatsDate ({children , ...restProps}) {
+   return <Date {...restProps}>{children}</Date>
 }

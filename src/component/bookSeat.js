@@ -2,12 +2,15 @@ import React , {useEffect, useRef , useState } from "react"
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 import {getCity} from "../actions/index"
-import { Seats, SeatsBook } from "../styles";
+import { SeatsBook } from "../styles";
+import Popup from "./popup"
 
 
-function BookSeats ({getCity , city}) {
+function BookSeats ({city}) {
  const [isAvailable , setIseAvaible] = useState(false);
  const [count , SetCount] = useState(0);
+ const [total , setTotal] = useState(0);
+ const [showPopup , setShowPopup] = useState(false)
  const mee = useRef(null)
  console.log(isAvailable);
   let {booking} = useParams();
@@ -26,6 +29,11 @@ function BookSeats ({getCity , city}) {
       cityFilter?.map(seat => {
         return (
           <>
+           {
+                  showPopup && (
+                    <Popup seat={seat}></Popup>
+                  )
+                }
          <h1>Book a seat to : {seat.destination} </h1>
           <SeatsBook>
              <SeatsBook.Container>
@@ -52,9 +60,13 @@ function BookSeats ({getCity , city}) {
               <SeatsBook.List>
                 <SeatsBook.Paragraph>Price : {seat.price} Ar</SeatsBook.Paragraph>
               </SeatsBook.List>
-              <SeatsBook.Button>Book {count} seats</SeatsBook.Button>
+              <SeatsBook.Button
+               onClick={() => setShowPopup(!showPopup)}
+              >
+                Book {count} seats
+              </SeatsBook.Button>
+              <p>Total : {total} Ar</p>
              </SeatsBook.Container>
-
              <SeatsBook.SelectButtonSeat>
              {seat.seats.map(place => {
                console.log(place);
@@ -66,7 +78,8 @@ function BookSeats ({getCity , city}) {
                 }
                 else {
                   setIseAvaible(false);
-                  SetCount(count + 1)
+                  SetCount(count + 1);
+                  setTotal((count + 1)   * `${seat.price}`)
                 }
               }
             
@@ -84,7 +97,7 @@ function BookSeats ({getCity , city}) {
              })}
              </SeatsBook.SelectButtonSeat>
           </SeatsBook>
-      </>  )
+      </>)
       })
       }
     </>

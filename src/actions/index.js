@@ -16,3 +16,15 @@ export function getDestiantion(destin) {
     value : destin
   }
 }
+export function showmyAcount(mycount) {
+  return {
+    type : "SHOW_ACCOUNT",
+    value : mycount
+  }
+}
+export function myAcount(mycount) {
+  return {
+    type : "CONFIRME_PLACE",
+    value : mycount
+  }
+}

@@ -3,6 +3,7 @@ import CityStation from "./component/cityStation"
 import { Switch, Route} from 'react-router-dom';
 import BookSeats  from './component/bookSeat';
 import TripBokking from './component/tripBokking';
+import Account from './component/account';
 export default function App() {
 
   return (
@@ -14,8 +15,11 @@ export default function App() {
         <Route  exact path="/:seats">
          <TripBokking></TripBokking>
         </Route>
-        <Route path="/:seats/:booking">
+        <Route exact path="/:seats/:booking">
          <BookSeats></BookSeats>
+        </Route>
+        <Route path="/:seats/:booking/count">
+          <Account></Account>
         </Route>
       </Switch> 
     </div>
