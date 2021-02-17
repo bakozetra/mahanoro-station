@@ -36,3 +36,15 @@ Feel free to use any workflow that you feel comfortable with. Below is a suggest
 You have until **Tuesday** at **15h30** to submit your github link and netlify link on this form : https://forms.gle/ikBWC2MokmdH4jdw6
 
 **Have fun building!** 🚀
+## Report of My work 
+1 I use a Redux  to finish this project.  In this project , I put all of my code in the src which a folder contains : component  actions , reducers , image , styles. 
+I put all of the action inside of the cation.
+
+I have fetched the API inside of the reducer and action and then I connect it in the App file. The reason why I put this connection inside of the App is because I have to fetch it once.
+
+After that , I destruct the state and then  I pass it in each element so that I can access this Api everywhere.
+
+## Trick
+I have got some problems with this project , I could not manage to finish the Update on the MyAccount.
+I can add when I confirm my place but I could not manage to multiply the price and I could not get the number of seats . Not only that but I don’t have enough time to work out of the cancel button
+
