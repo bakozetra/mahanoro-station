@@ -1,5 +1,5 @@
 import React from 'react'
-import {Container , Title , Button } from "./style/destinations"
+import {Container , Title , Button  , Content} from "./style/destinations"
 
 export default function Destiantions ({children , ...restProps}) {
   return <Container {...restProps} >{children}</Container>
@@ -11,4 +11,7 @@ Destiantions.Title = function DestiantionsTitle ({children , ...restProps}) {
 
 Destiantions.Button = function DestiantionsButton ({children , ...restProps}) {
    return <Button {...restProps}>{children}</Button>
+}
+Destiantions.Content = function DestiantionsContent ({children , ...restProps}) {
+   return <Content {...restProps}>{children}</Content>
 }

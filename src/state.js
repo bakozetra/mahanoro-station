@@ -39,26 +39,6 @@ export default {
     }
 
   ],
-  confirmPlace: [{
-    departureTime: 1613397600,
-    destination: "Antananarivo",
-    driverContact: "034585514",
-    driverName: "Tom Cruise",
-    estimatedDuration: "12h",
-    id: Date.now(),
-    price: 20000
-  } ,
-  {
-    departureTime: 1613397600,
-    destination: "Antananarivo",
-    driverContact: "034585514",
-    driverName: "Tom Cruise",
-    estimatedDuration: "12h",
-    id: Date.now(),
-    price: 20000
-  }
-
-
-]
+  confirmPlace: []
 
 }

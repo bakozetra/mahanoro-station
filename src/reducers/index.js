@@ -19,10 +19,10 @@ export function count(state =[] , action) {
      return state
    }
 }
-export function confirmPlace(state =[] , action) {
+export function confirmPlace(state=[] , action) {
   console.log(state);
    switch(action.type) {
-     case 'CONFIRM_PLACE': 
+     case 'CONFIRME_PLACE': 
      return [...state, action.value]
      default : 
      return state

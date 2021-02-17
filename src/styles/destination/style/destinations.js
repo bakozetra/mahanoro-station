@@ -1,6 +1,14 @@
 import styled from "styled-components"
-export const Title = styled.h2``;
+export const Title = styled.h2`
+font-size: 64px;
+line-height: 76px;
+color: #000000;
+`;
 
+export const Content = styled.div `
+ display : flex ;
+
+`;
 export const Container = styled.div`
 display : grid;
 grid-template-areas : "tana toama"
