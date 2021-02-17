@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import { Seats } from "../styles";
 import { Link } from "react-router-dom"
 import moment from 'moment';
-
+import CarImage from "../image/noto_bus.svg"
+import ClockImage from "../image/alarm-clock.svg"
 
 export default function TripBooking({ city }) {
   let { seats } = useParams();
@@ -11,6 +12,10 @@ export default function TripBooking({ city }) {
 
   return (
     <div>
+      <Seats>
+        <Seats.Image src={ClockImage} />
+        <Seats.Title>Next Trips to : <b>{seats}</b> </Seats.Title>
+      </Seats>
       {
         cityFilter?.map(seat => {
           const showDate = (moment(new Date(seat.departureTime)).format('DD-MMM-YYYY'));
@@ -19,8 +24,9 @@ export default function TripBooking({ city }) {
           var dayName = days[d.getDay()];
           return (
             <div>
+
               <Seats>
-                <Seats.Image />
+                <Seats.Image src={CarImage} />
                 <Seats.Paragraph>{dayName}</Seats.Paragraph>
                 <div>
                   <Seats.Date>{showDate}</Seats.Date>

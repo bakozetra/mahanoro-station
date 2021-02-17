@@ -1,52 +1,58 @@
-import React ,{useState , useEffect} from "react"
+import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
-import {showmyAcount} from "../actions/index"
+import { myAcount, showmyAcount } from "../actions/index"
 import { Accounts } from "../styles"
-function Account({count , addToAccoount ,countSeat , total}) {
+import CarImage from "../image/noto_bus.svg"
+import moment from 'moment';
+function Account({ count, addToAccoount, countSeat, total }) {
   console.log(addToAccoount);
   console.log(countSeat);
   console.log(total);
-   return (
-     <Accounts>
-         <div>
-       {
-         count.map(place => {
-           return (
-             <p>{place.firstName}</p>
-           )
-         })
-       }
-     </div>
-       <Accounts.SubTitle>my personnal informations:</Accounts.SubTitle>
-       <Accounts.Label>First name</Accounts.Label><br/>
-       <Accounts.Input></Accounts.Input><br/>
-       <Accounts.Label>Last name</Accounts.Label><br/>
-       <Accounts.Input></Accounts.Input><br/>
-       <Accounts.Label>Phone numberSeat</Accounts.Label><br/>
-       <Accounts.Input></Accounts.Input><br/>
-       <Accounts.Button>Update</Accounts.Button>
-       {
-         addToAccoount?.map(b => {
-           return <>
-           <p>{b.destination}</p>
-           <p>{b.departureTime}</p>
-           <p>{b.price} Ar</p>
-           <p>{countSeat} seats</p>
-           </>
-         })
-       }
-     </Accounts>
-   )
+
+  return (
+    <Accounts>
+      <Accounts.Form>
+        <Accounts.SubTitle>my personnal informations:</Accounts.SubTitle>
+        <Accounts.Label>First name</Accounts.Label><br />
+        <Accounts.Input></Accounts.Input><br />
+        <Accounts.Label>Last name</Accounts.Label><br />
+        <Accounts.Input></Accounts.Input><br />
+        <Accounts.Label>Phone numberSeat</Accounts.Label><br />
+        <Accounts.Input></Accounts.Input><br />
+        <Accounts.Button>Update</Accounts.Button>
+      </Accounts.Form>
+
+      {
+        addToAccoount?.map(mycount => {
+          const showDate = (moment(new Date(mycount.departureTime)).format('DD-MMM-YYYY'));
+          return (
+            <Accounts.Content>
+              <Accounts.Image src={CarImage} />
+              <div>
+                <Accounts.Paragraph>{mycount.destination}</Accounts.Paragraph>
+                <Accounts.Paragraph>{showDate}</Accounts.Paragraph>
+              </div>
+              <div>
+                <Accounts.Paragraph>{mycount.price} Ar</Accounts.Paragraph>
+                <Accounts.Paragraph>seats</Accounts.Paragraph>
+              </div>
+              <Accounts.CancelButton>Cancel</Accounts.CancelButton>
+            </Accounts.Content>
+          )
+        })
+      }
+    </Accounts>
+  )
 }
 
 function mapStateToProps(globalState) {
   return {
-    count : globalState.count,
-    addToAccoount : globalState.confirmPlace
+    count: globalState.count,
+    addToAccoount: globalState.confirmPlace
   }
 }
 const mapDispatchToProps = {
   showmyAcount,
 };
 
-export default connect(mapStateToProps , mapDispatchToProps)(Account)
+export default connect(mapStateToProps, mapDispatchToProps)(Account)

@@ -7,13 +7,11 @@ color: #000000;
 
 export const Content = styled.div `
  display : flex ;
-
 `;
 export const Container = styled.div`
 display : grid;
 grid-template-areas : "tana toama"
                       "vato mora";
-
 &:nth-child(1) {
   grid-area : tana;
 }
@@ -27,4 +25,5 @@ font-size: 36px;
 line-height: 43px;
 text-align: center;
 text-transform: uppercase;
-`
+`;
+export const Image = styled.img ``;

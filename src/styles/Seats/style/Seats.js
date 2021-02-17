@@ -1,5 +1,11 @@
 import styled from "styled-components"
-export const Title = styled.h2``
+export const Title = styled.h2`
+font-size: 64px;
+color: #000000;
+ b {
+   color: #E53170;
+ }
+`
 export const Container = styled.div`
  display : flex;
  justify-content : space-around;

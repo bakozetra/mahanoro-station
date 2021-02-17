@@ -10,4 +10,7 @@ export const Section = styled.section`
  flex-direction : row-reverse;
 `;
 export const SelectButtonSeat = styled.div``;
-export const Button = styled.button``;
+export const Button = styled.button`
+background: #E53170;
+width : 200px;
+height : 70px;`;
